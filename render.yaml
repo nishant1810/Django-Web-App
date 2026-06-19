@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: django-web-app
+    env: python
+
+    buildCommand: bash build.sh
+
+    startCommand: gunicorn django_web_app.wsgi:application
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
